@@ -9,9 +9,9 @@
 
 	"icons":
 	{
-		"16": "static/icon.png",
-		"48": "static/icon.png",
-		"128": "static/icon.png"
+		"16": "static/icon_128.png",
+		"48": "static/icon_128.png",
+		"128": "static/icon_128.png"
 	},
 
 	"background":
@@ -23,7 +23,7 @@
 
 	"browser_action": 
 	{
-		"default_icon": "img/icon.png",
+		"default_icon": "static/icon_128.png",
 		"default_title": "分享网址",
 		"default_popup": "popup.html"
 	},
@@ -31,7 +31,9 @@
 	"permissions":
 	[
 		"contextMenus",
-		"tabs"
+		"tabs",
+		"clipboardWrite",
+		"storage"
 	],
 
 	"homepage_url": "https://github.com/REZ2O/QSharePage",

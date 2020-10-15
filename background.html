@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background</title>
+</head>
+<body>
+    
+    <div id="clipboard-div">
+        <span id="content"></span>
+        <div id="qrcode"></div>
+    </div>
+    <script src="js/QRCode.js"></script>
+    <script src="js/background.js"></script>
+    <script>
+        var q = new QRCode('qrcode', {
+        text: 'www.qq.com',
+        width: 256,
+        height: 256,
+        colorDark: '#000000',
+        colorLight: '#ffffff',
+        correctLevel: QRCode.CorrectLevel.H
+    });
+    console.log(q);
+    </script>
+</body>
+</html>
