@@ -1,2 +1,2 @@
 # QSharePage
-a chromium extension for share url and page title.
+A chromium extension for sharing url and titles.
