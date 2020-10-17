@@ -12,8 +12,8 @@ function buildContent({ selection, url, title }){
     let selection_dom = document.getElementById('selection');
     let url_dom = document.getElementById('url');
     let title_dom = document.getElementById('title');
-    selection_dom.textContent = selection;
-    url_dom.textContent = url;
+    selection_dom.textContent = selection + (selection.length > 0 ? '\n' : '');
+    url_dom.textContent = url + '\n';
     title_dom.textContent = title;
     let qrcode = new QRCode('qrcode', {
         text: url,
