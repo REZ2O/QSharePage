@@ -1,0 +1,5 @@
+{
+	"pluginDesc": {"message": "一个用来快捷复制页面标题和url的插件"},
+	"isEnable": {"message": "是否启用"},
+	"success": {"message": "修改成功！"}
+}

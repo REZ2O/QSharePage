@@ -6,23 +6,14 @@
     <title>background</title>
 </head>
 <body>
-    
     <div id="clipboard-div">
-        <span id="content"></span>
+        <p id="selection"></p>
+        <p id="title"></p>
+        <p id="url"></p>
         <div id="qrcode"></div>
     </div>
+    <script src="js/config.js"></script>
     <script src="js/QRCode.js"></script>
     <script src="js/background.js"></script>
-    <script>
-        var q = new QRCode('qrcode', {
-        text: 'www.qq.com',
-        width: 256,
-        height: 256,
-        colorDark: '#000000',
-        colorLight: '#ffffff',
-        correctLevel: QRCode.CorrectLevel.H
-    });
-    console.log(q);
-    </script>
 </body>
 </html>

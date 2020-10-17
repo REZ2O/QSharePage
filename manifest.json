@@ -5,7 +5,7 @@
 
 	"version": "1.0.0",
 
-	"description": "A chromium extension for sharing url and titles.",
+	"description": "__MSG_pluginDesc__",
 
 	"icons":
 	{
@@ -38,15 +38,15 @@
 
 	"homepage_url": "https://github.com/REZ2O/QSharePage",
 
-	"options_page": "options.html",
+	"options_page": "popup.html",
 
 	"options_ui":
 	{
-		"page": "options.html",
+		"page": "popup.html",
 
 		"chrome_style": true
 	},
 
-    "default_locale": "zh_CN"
+    "default_locale": "en"
     
 }

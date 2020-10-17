@@ -1,0 +1,5 @@
+{
+	"pluginDesc": {"message": "A chromium extension for sharing url and titles."},
+	"isEnable": {"message": "Enable"},
+	"success": {"message": "success"}
+}

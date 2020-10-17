@@ -1,11 +1,20 @@
-const settings = {
-    enable: true
+const settings = config || {
+    enable: true,
+    version: '1.0.0'
 };
 
+/**
+ * Build content by background.html elements 
+ * @param { Object } { selection, url, title }
+ * @todo The QRcode was not copied, perhaps canvas is not rendered in background.html
+ */
 function buildContent({ selection, url, title }){
-    selection = selection.length > 0 ? selection + '\n' : '';
-    let content = `${ selection }${ url }\n${ title }`;
-    let dom = document.getElementById('qrcode');
+    let selection_dom = document.getElementById('selection');
+    let url_dom = document.getElementById('url');
+    let title_dom = document.getElementById('title');
+    selection_dom.textContent = selection;
+    url_dom.textContent = url;
+    title_dom.textContent = title;
     let qrcode = new QRCode('qrcode', {
         text: url,
         width: 256,
@@ -14,8 +23,6 @@ function buildContent({ selection, url, title }){
         colorLight: '#ffffff',
         correctLevel: QRCode.CorrectLevel.H
     });
-    let img = document.getElementById('clipboard-img');
-    img.src = localStorage[this.screenshotURIName]; // I store the image URI in localStorage
     let div = document.getElementById('clipboard-div');
     div.contentEditable = true;
     let range;
@@ -27,14 +34,23 @@ function buildContent({ selection, url, title }){
       div.focus();
       document.execCommand('copy');
     }
+
     div.contentEditable = false;
+
+    selection_dom.textContent = '';
+    url_dom.textContent = '';
+    title_dom.textContent = '';
+    qrcode.clear();
 }
 
-function create() {
-    if (settings.enable) {
+function buildMenu(enable = settings.enable) {
+    // chrome.contextMenus.remove('QShareCopy');
+    chrome.contextMenus.removeAll();
+    if (enable) {
         chrome.contextMenus.create({
             id: 'QShareCopy',
             title: "分享此页面",
+            contexts: ['page', "selection"],
             onclick: function (info,tab) {
                 let url = info.pageUrl || '';
                 let selection = info.selectionText || '';
@@ -47,10 +63,13 @@ function create() {
 
 function eventHandler(changes, namespace) {
     for (var key in changes) {
+        let val = changes[key].newValue;
         if (key == 'enable') {
-            settings.enable = changes[key];
+            settings.enable = val;
+            buildMenu();
         }
     }
 }
 
 chrome.storage.onChanged.addListener(eventHandler);
+buildMenu();
