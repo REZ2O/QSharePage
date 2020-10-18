@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>options</title>
+</head>
+<body>
+    <div style="text-align: center;width: 300px;">
+        <div>
+            <label for="enable" id="enablelabel">全局开关</label>
+            <input type="checkbox" name="enable" id="enable">
+        </div>
+        <div>
+            <label for="selection" id="selectionlabel">包含选中文字</label>
+            <input type="checkbox" name="selection" id="selection">
+        </div>
+        <div>
+            <label for="title" id="titlelabel">包含页面标题</label>
+            <input type="checkbox" name="title" id="title">
+        </div>
+        <div>
+            <label for="url" id="urllabel">包含页面url</label>
+            <input type="checkbox" name="url" id="url">
+        </div>
+        <div>
+            <label for="qrcode" id="qrcodelabel">启用二维码生成</label>
+            <input type="checkbox" name="qrcode" id="qrcode">
+        </div>
+        <div>
+            <label for="bilicopy" id="bilicopylabel">bilibili文章拷贝</label>
+            <input type="checkbox" name="bilicopy" id="bilicopy">
+        </div>
+       
+        <div id="message" style="color: green;"></div>
+    </div>
+    <script src="js/config.js"></script>
+    <script src="js/popup.js"></script>
+</body>
+</html>

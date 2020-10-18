@@ -1,5 +1,26 @@
 {
-	"pluginDesc": {"message": "一个用来快捷复制页面标题和url的插件"},
-	"isEnable": {"message": "是否启用"},
-	"success": {"message": "修改成功！"}
+	"pluginDesc": {
+		"message": "一个用来快捷复制页面标题和url的插件"
+	},
+	"enable": {
+		"message": "全局开关"
+	},
+	"selection": {
+		"message": "包含选中文字"
+	},
+	"title": {
+		"message": "包含页面标题"
+	},
+	"url": {
+		"message": "包含页面url"
+	},
+	"qrcode": {
+		"message": "启用二维码生成"
+	},
+	"success": {
+		"message": "修改成功！"
+	},
+	"bilicopy": {
+		"message": "bilibili文章拷贝"
+	}
 }

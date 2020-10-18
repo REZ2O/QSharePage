@@ -1,5 +1,26 @@
 {
-	"pluginDesc": {"message": "A chromium extension for sharing url and titles."},
-	"isEnable": {"message": "Enable"},
-	"success": {"message": "success"}
+	"pluginDesc": {
+		"message": "A chromium extension for sharing url and titles."
+	},
+	"enable": {
+		"message": "Enable"
+	},
+	"selection": {
+		"message": "Include selection"
+	},
+	"title": {
+		"message": "Include page title"
+	},
+	"url": {
+		"message": "Include URL"
+	},
+	"qrcode": {
+		"message": "QR code"
+	},
+	"success": {
+		"message": "success"
+	},
+	"bilicopy": {
+		"message": "copy bilibili article"
+	}
 }

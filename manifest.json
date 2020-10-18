@@ -3,7 +3,7 @@
 
 	"name": "QSharePage",
 
-	"version": "1.0.0",
+	"version": "1.0.1",
 
 	"description": "__MSG_pluginDesc__",
 
@@ -20,6 +20,13 @@
 		"page": "background.html"
 
 	},
+
+	"content_scripts":[
+		{
+			"matches": ["http://www.bilibili.com/read/*"],
+			"js": ["js/content-script.js"]
+		}
+	],
 
 	"browser_action": 
 	{
@@ -38,11 +45,11 @@
 
 	"homepage_url": "https://github.com/REZ2O/QSharePage",
 
-	"options_page": "popup.html",
+	"options_page": "options.html",
 
 	"options_ui":
 	{
-		"page": "popup.html",
+		"page": "options.html",
 
 		"chrome_style": true
 	},

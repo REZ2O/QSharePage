@@ -1,4 +1,9 @@
 const config = {
     enable: true,
-    version: '1.0.0'
+    selection: true,
+    title: true,
+    url: true,
+    qrcode: true,
+    bilicopy: true,
+    version: '1.0.1'
 };
