@@ -17,7 +17,7 @@ function checkboxHandler() {
 }
 
 /**
- * popup.html language setting
+ * language setting
  */
 function i18n() {
     for (let key in settings) {
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-document.querySelectorAll('input').forEach('click', checkboxHandler);
+document.querySelectorAll('input').forEach(e => { e.addEventListener('click', checkboxHandler) });
 
 /* document.querySelector('#check').addEventListener('click', function (e) {
     let el = this;

@@ -1,14 +1,23 @@
-(function unlockBiliBiliCopy() {
+function unlockCopy(){
+    document.querySelectorAll('.unable-reprint').forEach(function (e) {
+        let css = e.getAttribute("class");
+        css = css.replace('unable-reprint', '');
+        e.setAttribute("class", css);
+    });
+}
+
+(() => {
     let defaultSettings = {
         bilicopy: true
     };
     chrome.storage.sync.get(defaultSettings, function (items) {
         if (items.bilicopy) {
-            document.querySelectorAll('.unable-reprint').forEach(function () {
-                let css = this.getAttribute("class");
-                css = css.replace('unable-reprint', '');
-                this.setAttribute("class", css);
-            });
+            let id = setInterval(()=>{
+                if(document.readyState == 'complete'){
+                    clearInterval(id);
+                    unlockCopy();
+                }
+            }, 1000);
         }
     });
-})();
+})()
